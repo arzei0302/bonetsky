@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>start_test</title>
+</head>
+<body>
+    <h1>ТЕСТ: {{ тест.name }}</h1>
+    <form method="post" action="{% url 'send_test' тест.id %}">
+        {% csrf_token %}
+        {% for вопрос in вопросы %}
+            <h2>{{ вопрос.text }}</h2>
+            {% for вариант in вопрос.answer_choices %}
+                <input type="radio" name="вопрос_{{ вопрос.id }}" value="{{ вариант }}">{{ вариант }}<br>
+            {% endfor %}
+        {% endfor %}
+        <input type="submit" value="ЗАВЕРШИТЬ ТЕСТ">
+    </form>
+</body>
+</html>

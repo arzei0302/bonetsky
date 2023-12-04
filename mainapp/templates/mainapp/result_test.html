@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>result_test</title>
+</head>
+<body>
+    <h1>Результаты теста</h1>
+    <p>Пользователь: {{ результат.user.name }}</p>
+    <p>Баллы: {{ результат.score }}</p>
+    <h2>Ответы пользователя:</h2>
+    <ul>
+        {% for вопрос, ответ in результат.answers.items %}
+            <li>{{ вопрос }}: {{ ответ }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

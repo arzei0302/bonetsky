@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список тестов</title>
+</head>
+<body>
+    <h1>Список доступных тестов</h1>
+    <ul>
+        {% for тест in тесты %}
+            <li><a href="{% url 'start_test' тест.id %}">{{ тест.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
